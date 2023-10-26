@@ -50,11 +50,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'leafgloom.urls'
-
+#C:/Users/kz17a/OneDrive/Escritorio/Proyectos de intro/Leafgloom/leafgloom/plantillas
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["C:/Users/kz17a/OneDrive/Escritorio/Proyectos de intro/Leafgloom/leafgloom/plantillas"],
+        'DIRS': ["leafgloom\plantillas"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
