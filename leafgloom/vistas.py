@@ -34,3 +34,6 @@ def catalogo(request,nombre_planta):
 
 def listado(request):
     return render(request, "listado.html")
+
+def plantas(request):
+    return render(request, "plantas.html")
