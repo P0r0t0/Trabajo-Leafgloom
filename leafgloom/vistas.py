@@ -37,3 +37,6 @@ def listado(request):
 
 def plantas(request):
     return render(request, "plantas.html")
+
+def home(request):
+    return render(request, "home.html")
