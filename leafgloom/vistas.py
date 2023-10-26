@@ -31,3 +31,6 @@ def catalogo(request,nombre_planta):
     documento = doc_externo.render({"other_name": nombre_planta})
 
     return HttpResponse(documento)
+
+def listado(request):
+    return render(request, "listado.html")
