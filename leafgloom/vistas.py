@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.template import Template, Context
 from django.template import loader
 from django.shortcuts import render 
+import requests
 
 # import requests
 
@@ -26,6 +27,7 @@ def catalogo(request,nombre_planta):
     #if response.status_code == 200:
 
 
+
     doc_externo = loader.get_template("Catalogo.html")
 
     documento = doc_externo.render({"other_name": nombre_planta})
@@ -33,7 +35,14 @@ def catalogo(request,nombre_planta):
     return HttpResponse(documento)
 
 def listado(request):
-    return render(request, "listado.html")
+    url = "https://perenual.com/api/species-list?key=sk-24d46532eef6848082612"
+    response = requests.get(url)
+    if response.status_code == 200:
+        datos = response.json()
+    else:
+        datos = {"error":[]}
+
+    return render(request, "listado.html",datos)
 
 def plantas(request):
     return render(request, "plantas.html")
