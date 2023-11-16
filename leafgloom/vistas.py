@@ -6,6 +6,13 @@ import requests
 
 # import requests
 
+url = "https://perenual.com/api/species-list?key=sk-24d46532eef6848082612"
+response = requests.get(url)
+if response.status_code == 200:
+    datos = response.json()
+else:
+    datos = {"error":[]}
+
 
 def Pagina_inicial(request):
 
@@ -20,27 +27,18 @@ def Pagina_inicial(request):
    return render(request, "Logo.html") #se puede poner un tercer parametro que seria el contexto, este caso no trae
 
 
+# Se esta intentando que aparezca informacion de la planata selecionadad en listado por cada catalogo
 def catalogo(request,nombre_planta):
-
-    #url = "https://perenual.com/api/species-list?key=sk-24d46532eef6848082612"      #llamar a la api para obtener datos
-    #response = request.get(url)
-    #if response.status_code == 200:
-
-
 
     doc_externo = loader.get_template("Catalogo.html")
 
-    documento = doc_externo.render({"other_name": nombre_planta})
+    documento = doc_externo.render({"other_name": nombre_planta })
 
     return HttpResponse(documento)
 
+
+
 def listado(request):
-    url = "https://perenual.com/api/species-list?key=sk-24d46532eef6848082612"
-    response = requests.get(url)
-    if response.status_code == 200:
-        datos = response.json()
-    else:
-        datos = {"error":[]}
 
     return render(request, "listado.html",datos)
 
