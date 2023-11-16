@@ -3,7 +3,7 @@
 {% block title %} Listado de plantas {% endblock %}
 
 {% block content %}
-    <h1>xd</h1>
+    <h1>Listado de plantas<h1>
     {% for planta in data %}
     <div class="card-deck">
         
@@ -12,7 +12,7 @@
           <img  src= '{{planta.default_image.small_url}}' alt="Card image cap" width="700" height="500">
           <div class="card-body">
             <h5 class="card-title"> {{planta.common_name}}</h5>
-            <p class="card-text">a</p>  
+            <p class="card-text">{{planta.scientific_name}}</p>  
             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
           </div>
         </div>
