@@ -1,20 +1,28 @@
 
 {% extends "plantilla_padre.html" %}
 
-{% block title %} {{other_name}} {% endblock %}
+{% block title %} {{common_name}} {% endblock %}
 
 {% block content %} 
 
 <div class="row justify-content-center">
     <div class="card">
-        <h5 class="card-header">{{other_name}}</h5>
+        <h5 class="card-header">{{common_name}}</h5>
         <div class="card-body">
-            <img  src= '{{planta.default_image.small_url}}' class="img-thumbnail" alt="Card image cap" >
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="row justify-content-between">
+                <div class="col-4">
+                    <img  src= '{{default_image.original_url}}' class="img-thumbnail" alt="Card image cap" >
+                </div>  
+
+                <div class="col-8">
+                    <div calss = "row">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>   
+            </div>
         </div>
-    </div>
     </div>
 </div>
 {% endblock %}
