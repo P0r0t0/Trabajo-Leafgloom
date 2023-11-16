@@ -3,20 +3,25 @@
 {% block title %} Listado de plantas {% endblock %}
 
 {% block content %}
-    <h1>Listado de plantas<h1>
-    {% for planta in data %}
-    <div class="card-deck">
-        
-        <div class="card">
-            <!-- acá poner un for para las imagenes de la api y la información -->
-          <img  src= '{{planta.default_image.small_url}}' alt="Card image cap" width="700" height="500">
-          <div class="card-body">
-            <h5 class="card-title"> {{planta.common_name}}</h5>
-            <p class="card-text">{{planta.scientific_name}}</p>  
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <h1>LISTADO DE PLANTAS</h1>
+    <div class="row">      
+      {% for planta in data %}
+        <div class="card-deck">
+            
+            <div class="card">
+                <!-- acá poner un for para las imagenes de la api y la información -->
+              <img  src= '{{planta.default_image.small_url}}' alt="Card image cap" width="450" height="250">
+              <div class="card-body">
+                <h5 class="card-title"> {{planta.common_name}}</h5>
+                <h6 class="card-text"> {{planta.scientific_name}} </h6>
+                <a href="../catalogo/{{planta.common_name}}" class="btn btn-primary">Ver detalles de planta</a>  
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                
+              </div>
+            </div>
+            
           </div>
+          {% endfor %}
         </div>
-        
-      </div>
-      {% endfor %}
+              
 {% endblock %}
