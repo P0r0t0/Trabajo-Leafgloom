@@ -6,6 +6,7 @@ import requests
 
 # import requests
 
+
 ##
 # se movio la extraccion de datos a la parte logica del codigo
 url = "https://perenual.com/api/species-list?key=sk-24d46532eef6848082612"
@@ -21,7 +22,7 @@ def Pagina_inicial(request):
    return render(request, "Logo.html") #se puede poner un tercer parametro que seria el contexto, este caso no trae
 
 ##
-# se esta intentando que el display de información sea lindo :P
+# se esta intentando que el display de información sea lipython managedo :P
 # la info de la planta se saca llamando entre {{ }} la llave del dic de cada planta del json()
 # posiblemente se cambie el for por un while
 def catalogo(request,nombre_planta):
