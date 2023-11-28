@@ -4,12 +4,16 @@ from django.template import loader
 from django.shortcuts import render 
 import requests
 
-# import requests
-
+##      llaves
+#   key = "sk-457k656529d1441692612"
+#   key = "sk-FsEA653c5312682c42739"    
+#   key = "sk-U5H76521de6713ac12231"
+#   key = "sk-yl4e6521da2899f312380"
 ##
-# se movio la extraccion de datos a la parte logica del codigo
-url = "https://perenual.com/api/species-list?key=sk-24d46532eef6848082612"
-response = requests.get(url)
+key = "sk-FsEA653c5312682c42739"
+url1 = "https://perenual.com/api/species-list?key={}"
+url2 = "https://perenual.com/api/species/details/{}?key={}"
+response = requests.get(url1.format(key))
 if response.status_code == 200:
     datos = response.json()
 else:
@@ -23,15 +27,12 @@ def Pagina_inicial(request):
 ##
 # se esta intentando que el display de información sea lindo :P
 # la info de la planta se saca llamando entre {{ }} la llave del dic de cada planta del json()
-# posiblemente se cambie el for por un while
-def catalogo(request,nombre_planta):
+# posiblemente se cambie el for por un while 
 
-    dic = {"n_p" : nombre_planta} 
-    for cosa in datos["data"]:
-        if dic["n_p"] == cosa["common_name"]:
-            ctx = cosa
-        
-
+def catalogo(request, id):
+    planta_id = requests.get(url2.format(id,key))
+    ctx = planta_id.json()
+ 
     return render(request , "Catalogo.html" , ctx)
 ##
 

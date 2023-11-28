@@ -9,13 +9,13 @@
         {% for planta in data %}
           <div class="card-deck">
               
-              <div class="card">
+              <div class="card" style="background-color: rgb(239, 239, 227);">
                   <!-- acá poner un for para las imagenes de la api y la información -->
                 <img  src= '{{planta.default_image.small_url}}' class="img-thumbnail" alt="Card image cap" >
                 <div class="card-body">
                   <h5 class="card-title"> {{planta.common_name}}</h5>
                   <h6 class="card-text"> {{planta.scientific_name}} </h6>
-                  <a href="../catalogo/{{planta.common_name}}" class="btn btn-primary">Ver detalles de planta</a>  
+                  <a href="../catalogo/{{planta.id}}" class="btn btn-success" >Ver detalles de planta</a>  
                   <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                   
                 </div>

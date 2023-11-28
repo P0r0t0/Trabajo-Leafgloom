@@ -5,20 +5,74 @@
 
 {% block content %} 
 
+
+
 <div class="row justify-content-center">
-    <div class="card">
-        <h5 class="card-header">{{common_name}}</h5>
+    <div class="card" style="width: 85rem; background-color: rgb(239, 239, 227);">
+
+        <h5 class="card-header">
+            <a href="../listado_de_plantas" class="btn btn-success">Regresar</a>
+        </h5>
         <div class="card-body">
-            <div class="row justify-content-between">
+            <div class="row justify-conte   nt-between">
                 <div class="col-4">
                     <img  src= '{{default_image.original_url}}' class="img-thumbnail" alt="Card image cap" >
                 </div>  
 
                 <div class="col-8">
                     <div calss = "row">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title">{{common_name}}</h5>
+                        <h5 class="card-title">Cuidados</h5>
+                        <li> Tipo de planta: {{type}} </li>
+                        <li> Regado: {{watering}} </li>
+                        <li> Ciclo: {{cycle}} </li>
+                        <li> Cantidad de sol: {{sunlight}} </li>
+                        
+                        <li> Flores: {{flowers}} </li>
+
+                        <p class="card-text">With supporting text below as a natural lead-in to additional contentad-in to additional content.</p>
+
+                        <table class="table table-success table-striped-columns">
+                            <tbody style="background-color: rgb(143, 182, 118);">
+                              <tr>
+                                <td colspan="4">
+                                  <div class="container text-center">
+                                      Sol
+                                    </div>
+                                  </td>
+                              </tr>
+
+                          </tbody>
+                            <tbody>
+                                <tr>
+                                  <td> Ciclo: </td>
+                                  <td> {{cycle}} </td>
+                                  <td>Cantidad de agua:Cantidad de sol:</td>
+                                  <td>{{sunlight}}{{depth_water_requiremen}} {{depth_water_requiremen.unit}}</td>
+                                </tr>
+                                <tr>
+                            </tbody>
+                            <tbody>
+                              <tr>
+                                <td>Cantidad de agua:</td>
+                                <td>{{depth_water_requiremen}} {{depth_water_requiremen.unit}}</td>
+                                <td>Flores</td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td>Veces que se poda:</td>
+                                <td>{{pruning_count.amount}} per {{pruning_count.interval}}</td>
+                                <td>Meses de poda:</td>
+                                <td>{{pruning_month}}</td>
+                              </tr>
+                              <tr>
+                                <td>Flores</th>
+                                <td colspan="2">"flowers"</td>
+                                <td>@twitter</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
                     </div>
                 </div>   
             </div>

@@ -22,7 +22,7 @@ from leafgloom.vistas import Pagina_inicial, catalogo, listado, plantas, home
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("Pagina_inicial/",Pagina_inicial,),
-    path("catalogo/<nombre_planta>", catalogo,),
+    path("catalogo/<id>", catalogo,),
     path("listado_de_plantas/",listado),
     path("plantas/",plantas),
     path("", home ),
