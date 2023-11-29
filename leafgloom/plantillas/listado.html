@@ -3,7 +3,10 @@
 {% block title %} Listado de plantas {% endblock %}
 
 {% block content %}
-    <h1>LISTADO DE PLANTAS</h1>
+    <div class="text-center">
+      <h1>LISTADO DE PLANTAS</h1>
+    </div>
+    
     
       <div class="row justify-content-center">      
         {% for planta in data %}
@@ -14,9 +17,10 @@
                 <img  src= '{{planta.default_image.small_url}}' class="img-thumbnail" alt="Card image cap" >
                 <div class="card-body">
                   <h5 class="card-title"> {{planta.common_name}}</h5>
-                  <h6 class="card-text"> {{planta.scientific_name}} </h6>
+                  <h6 class="card-text"> {{planta.scientific_name.0}} </h6>
+                  <p class="card-text"><small class="text-muted">Regado: {{planta.watering}}</small></p>
                   <a href="../catalogo/{{planta.id}}" class="btn btn-success" >Ver detalles de planta</a>  
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  
                   
                 </div>
               </div>

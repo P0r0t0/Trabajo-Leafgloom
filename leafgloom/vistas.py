@@ -10,7 +10,7 @@ import requests
 #   key = "sk-U5H76521de6713ac12231"
 #   key = "sk-yl4e6521da2899f312380"
 ##
-key = "sk-FsEA653c5312682c42739"
+key = "sk-yl4e6521da2899f312380"
 url1 = "https://perenual.com/api/species-list?key={}"
 url2 = "https://perenual.com/api/species/details/{}?key={}"
 response = requests.get(url1.format(key))
@@ -43,8 +43,8 @@ def listado(request):
 #
 
 
-def plantas(request):
-    return render(request, "plantas.html")
+def Lo_que_necesitas(request):
+    return render(request, "Lo_que_necesitas.html")
 
 def home(request):
     return render(request, "home.html")

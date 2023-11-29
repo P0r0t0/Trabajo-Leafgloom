@@ -22,61 +22,70 @@
                 <div class="col-8">
                     <div calss = "row">
                         <h5 class="card-title">{{common_name}}</h5>
-                        <h5 class="card-title">Cuidados</h5>
-                        <li> Tipo de planta: {{type}} </li>
-                        <li> Regado: {{watering}} </li>
-                        <li> Ciclo: {{cycle}} </li>
-                        <li> Cantidad de sol: {{sunlight}} </li>
-                        
-                        <li> Flores: {{flowers}} </li>
+                        <h5 class="card-title">Nombre Cientifico: {{scientific_name.0}}</h5>
 
-                        <p class="card-text">With supporting text below as a natural lead-in to additional contentad-in to additional content.</p>
+                        <div class="row justify-content-center" style="margin: 2rem;">
+                          <div class="container text-center">
+                            <div class="row align-items-start" >
+                              <div class="col" style=" padding: 0;">
+                                <div style="background-color: rgb(77, 181, 61);">
 
-                        <table class="table table-success table-striped-columns">
-                            <tbody style="background-color: rgb(143, 182, 118);">
-                              <tr>
-                                <td colspan="4">
                                   <div class="container text-center">
-                                      Sol
+                                    <div class="row">
+                                      <div class="col align-self-center">
+                                        <h3>Datitos Planta</h3>
+                                      </div>
+                                  
                                     </div>
-                                  </td>
-                              </tr>
 
-                          </tbody>
-                            <tbody>
-                                <tr>
-                                  <td> Ciclo: </td>
-                                  <td> {{cycle}} </td>
-                                  <td>Cantidad de agua:Cantidad de sol:</td>
-                                  <td>{{sunlight}}{{depth_water_requiremen}} {{depth_water_requiremen.unit}}</td>
-                                </tr>
-                                <tr>
-                            </tbody>
-                            <tbody>
-                              <tr>
-                                <td>Cantidad de agua:</td>
-                                <td>{{depth_water_requiremen}} {{depth_water_requiremen.unit}}</td>
-                                <td>Flores</td>
-                                <td></td>
-                              </tr>
-                              <tr>
-                                <td>Veces que se poda:</td>
-                                <td>{{pruning_count.amount}} per {{pruning_count.interval}}</td>
-                                <td>Meses de poda:</td>
-                                <td>{{pruning_month}}</td>
-                              </tr>
-                              <tr>
-                                <td>Flores</th>
-                                <td colspan="2">"flowers"</td>
-                                <td>@twitter</td>
-                              </tr>
-                            </tbody>
-                          </table>
+                                  </div>
 
+                                </div>
+                                <div style="background-color: rgb(124, 212, 110); height: 20rem; ">
+                                  
+                                  
+                                  <div>
+
+                                    <p> Tipo de planta: {{type}} </p>
+                                    <p> Ciclo: {{cycle}} </p>
+                                    <p> Flores: {{flowers}} </p>
+
+                                  </div>
+                                  
+                                </div>
+                              </div>
+                              <div class="col" style=" padding: 0;">
+                                <div style="background-color: rgb(168, 165, 116);">
+                                  
+                                  <div class="container text-center">
+                                    <div class="row">
+                                      <div class="col align-self-center">
+                                        <h3>Cuidados y Especificaciones</h3>
+                                      </div>
+                                  
+                                    </div>
+
+                                  </div>
+                                  
+                                </div>
+                                <div style="background-color: rgb(208, 205, 154); height: 20rem;">
+                                  
+                                  <div>
+
+                                    <p> Cantidad de sol: {{sunlight.0}} </p>
+                                    <p> Regado: {{watering}} </p>
+                                    <p> periodo de regado: {{watering_period}} </p>
+
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                </div>   
-            </div>
-        </div>
-    </div>
-</div>
+                  </div>
+            </div>  
+     </div>
+  </div>
 {% endblock %}

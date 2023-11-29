@@ -17,13 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from leafgloom.vistas import Pagina_inicial, catalogo, listado, plantas, home
+from leafgloom.vistas import Pagina_inicial, catalogo, listado, Lo_que_necesitas, home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("Pagina_inicial/",Pagina_inicial,),
     path("catalogo/<id>", catalogo,),
     path("listado_de_plantas/",listado),
-    path("plantas/",plantas),
+    path("Lo_que_necesitas/",Lo_que_necesitas),
     path("", home ),
 ]
